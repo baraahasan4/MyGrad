@@ -1,64 +1,161 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# 🏨 Hotel Management System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive backend system for managing hotel operations, built with **Laravel** and **MySQL**. The system supports multiple user roles and covers all hotel services from room bookings to restaurant orders and financial reporting.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Role-Based Access Control
+- **Admin** — Full control over staff, rooms, pricing, promotions, reports, and complaints
+- **Receptionist** — Manage bookings, check-in/check-out, and service reservations
+- **Restaurant Supervisor** — Handle orders, menu management, and restaurant invoices
+- **Guest** — Book rooms and services, make payments, and track reservations
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Room Management
+- Room booking with type-based availability checking
+- Dynamic pricing engine with **day-by-day promotion calculation**
+- Support for percentage and fixed discounts with date-range targeting
+- Conflict detection to prevent double-booking across room types
+- QR-based guest checkout with **expiring tokens (30 minutes)**
 
-## Learning Laravel
+  ### Room Booking System
+- Room type selection
+- Booking availability checking
+- Conflict detection for overlapping bookings
+- Booking approval workflow
+- Booking cancellation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  ### QR Checkout System
+- Generate QR code for checkout
+- Secure token-based verification
+- Automatic room availability update after checkout
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Receptionist Features
+- Create bookings on behalf of guests
+- Assign rooms to confirmed bookings
+- Manage guest checkouts
 
-## Laravel Sponsors
+### Restaurant
+- Menu management (add/remove items)
+- Order creation by guest or on behalf of guest by supervisor
+- Table management and reservation
+- Order status tracking with real-time updates
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Additional Services
+- massage session booking
+- Pool reservation with availability checking
+- Event hall booking with hospitality and decoration options
 
-### Premium Partners
+### Payment & Invoicing
+- **Stripe** payment integration across all services
+- Unified invoice system with full status lifecycle (unpaid / paid / cancelled)
+- Card details storage (brand & last 4 digits)
+- Per-guest payment history and billing records
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Reports & Analytics
+- Monthly revenue reports
+- Room occupancy statistics
+- Invoice breakdowns exportable as PDF
+- Current guest monitoring dashboard
 
-## Contributing
+### Security
+- Token-based authentication using **Laravel Sanctum**
+- Encrypted storage for sensitive guest data (National ID)
+- OTP email verification on registration
+- Role middleware for endpoint protection
+- Secure token-based checkout verification
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🛠️ Tech Stack
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+| Layer | Technology |
+|---|---|
+| Framework | Laravel 9 |
+| Database | MySQL |
+| Authentication | Laravel Sanctum |
+| Payment | Stripe |
+| Architecture | Service Layer Pattern |
+| API | RESTful API |
+| Tools | Postman, Git |
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🚀 Local Setup
 
-## License
+```bash
+# 1. Clone the repository
+git clone https://github.com/baraahasan4/MyGrad.git
+cd MyGrad
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 2. Install dependencies
+composer install
+
+# 3. Configure environment
+cp .env.example .env
+php artisan key:generate
+
+# 4. Set up database
+# Update DB credentials in .env, then:
+php artisan migrate
+
+# 5. Set up Stripe (test mode)
+# Add your Stripe test keys to .env:
+# STRIPE_SECRET=sk_test_...
+# STRIPE_KEY=pk_test_...
+
+# 6. Serve the application
+php artisan serve
+```
+
+---
+
+## 📁 Architecture
+
+```
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── AdminController.php
+│   │   ├── BookHallController.php
+│   │   ├── BookRoomController.php
+│   │   ├── MassageController.php
+│   │   ├── PaymentController.php
+│   │   ├── PoolController.php
+│   │   ├── RestaurantOrderController.php
+│   │   └── UserController.php
+│   └── Middleware/
+│       └── CheckRole.php
+├── Services/
+│   ├── BookingService.php              # Room booking business logic
+│   ├── BookingPriceService.php         # Dynamic pricing & promotions
+│   ├── BookingHallService.php          # Hall booking logic
+│   ├── ConflictCheckerService.php      # Availability & overlap detection
+│   ├── ConflictHandlerService.php      # Cancel conflicting bookings
+│   ├── EmployeeAvailabilityService.php # Massage employee scheduling
+│   ├── InvoiceService.php              # Unified invoicing system
+│   ├── MassageService.php
+│   └── RestaurantOrderService.php
+└── Models/
+```
+
+---
+
+## 🔑 API Overview
+
+| Role | Base Endpoints |
+|---|---|
+| Guest | BookRoom, RequestMassage, RequestPoolReservation, BookHall, RestaurantOrder |
+| Receptionist | ApproveBooking, CheckIn, CheckOut, AssignRoom |
+| Restaurant Supervisor | ManageOrders, ManageMenu |
+| Admin | ManageStaff, ManageRooms, Reports, Promotions, Pricing |
+
+Full API documentation available via [Postman Collection](./postman/hotel.postman_collection.json)
+
+---
+
+## 👨‍💻 Author
+
+**Baraa Hasan**
+[GitHub](https://github.com/baraahasan4)
