@@ -1,0 +1,4208 @@
+{
+	"info": {
+		"_postman_id": "588357bc-f31f-4e1c-8a8f-34123114900e",
+		"name": "hotel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24634016"
+	},
+	"item": [
+		{
+			"name": "Guest",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "baraa",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "baraa@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "09111952778",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "baraa@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoomTypes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|TLHPu75qbItqQd8AsQoyNRWnoovhWpC58bqeX1sX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/GetRoomTypes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"GetRoomTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoomsByType",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|TLHPu75qbItqQd8AsQoyNRWnoovhWpC58bqeX1sX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/GetRoomsByType/4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"GetRoomsByType",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRandomRooms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|TLHPu75qbItqQd8AsQoyNRWnoovhWpC58bqeX1sX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getRandomRooms",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRandomRooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoomDetails",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|TLHPu75qbItqQd8AsQoyNRWnoovhWpC58bqeX1sX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/getRoomDetails/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRoomDetails",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAvailableRoomsByDate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "15|FfOjq3Oytgb7WsCjjgCLLwP8L72Tvdxdkv5njFiv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "room_type_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "check_in",
+									"value": "2025-07-02 20:00:00",
+									"type": "text"
+								},
+								{
+									"key": "check_out",
+									"value": "2025-07-04 00:00:00",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/getAvailableRoomsByDate",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getAvailableRoomsByDate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BookRoom",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|TLHPu75qbItqQd8AsQoyNRWnoovhWpC58bqeX1sX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"room_type_id\": 2,\r\n    \"check_in\": \"2025-07-29\"\r\n    //,\"check_out\": \"2025-07-14\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/BookRoom",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"BookRoom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelBookingByGuest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|loWV4RqwMVytTiFSd5hgZfs5BjNQGP7wLS9x84Kz",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/CancelBookingByGuest/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"CancelBookingByGuest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMyBookingsByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|RAad8Xoiwyjz5t4s7Trg3fVmTTIDlTSnhJd8Dc8y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/getMyBookingsByStatus/cancelled",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMyBookingsByStatus",
+								"cancelled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMyInvoicesByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "bayan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "bayan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "0987195789",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/Evo.Store/Pictures/Lab~/‪+963 981 851 046‬ 20190501_214203.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/getMyInvoicesByStatus/unpaid",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMyInvoicesByStatus",
+								"unpaid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PayForRoomBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "46|8usy3ySaP6XfYc1JmYZVJsdlBcoOLKPqFQEecEy8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/room-booking/pay/11",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"room-booking",
+								"pay",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadMyPhoto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/uploadMyPhoto",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"uploadMyPhoto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RequestOrderByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|shqOwR6nPxwLe3FHv8bNWEkQVm0o8E1vLJxix1Ar",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"order_type\": \"room\", \r\n    \"preferred_time\": \"2025-07-03 02:00:00\", \r\n    \"menu_items\": [\r\n        {\r\n            \"id\": 3, \r\n            \"quantity\":4\r\n        },\r\n        {\r\n            \"id\": 2, \r\n            \"quantity\": 4\r\n        },\r\n        {\r\n            \"id\": 1, \r\n            \"quantity\": 4\r\n        }\r\n    ], \r\n    \"table_or_room_number\":202, \r\n    \"number_of_people\":2,\r\n    \"booked_duration\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/RequestOrderByUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"RequestOrderByUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelOrdersByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|SQ1hGHLGPsFV3LaCqny6KMaFsEputk43dPHaLSdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/cancelOrdersByUser/5",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cancelOrdersByUser",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListMenuItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|1ReZ4hDyFlsNi8QwO9WjB5qsRG1eDAec0NYQEJKV",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getListMenuItemsByUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getListMenuItemsByUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserOrdersByUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMenuItemByType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|OuCgtN5WHwQFXi7zNph34wAFJ0swJBjl4wEP06jm",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/getMenuItemByType/Appetizers",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMenuItemByType",
+								"Appetizers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payForRestaurantOrder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|KVrmq3dRGrnRbrZ3AHIBjwLumi6V0DDIRAHitedR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/restaurant-orders/pay/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"restaurant-orders",
+								"pay",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RequestMassage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|KVrmq3dRGrnRbrZ3AHIBjwLumi6V0DDIRAHitedR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "preferred_time",
+									"value": "2025-07-03 20:00:00",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "female",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/RequestMassage",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"RequestMassage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMyMassReqByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|RUYeyYMnnu8O6NQtzDnxPzNU7Al4DXnodhCfPXMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/getMyMassReqByStatus?status=confirmed",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMyMassReqByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "confirmed"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getavailableEmployees",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|YTZnqWaIOngaVAh2JVNpzOT5eI0zWnml6Q1w7G0W",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getavailableEmployees?preferred_time=2025-07-30 16:00:00&gender=female",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getavailableEmployees"
+							],
+							"query": [
+								{
+									"key": "preferred_time",
+									"value": "2025-07-30 16:00:00"
+								},
+								{
+									"key": "gender",
+									"value": "female"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelMassReqByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|2eKVY9sYbYhoUT2GnN8s1YtDhSZ6qioVmQ8s0TYQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cancelMassReqByUser/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cancelMassReqByUser",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payForMassage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|KVrmq3dRGrnRbrZ3AHIBjwLumi6V0DDIRAHitedR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/massage-booking/pay/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"massage-booking",
+								"pay",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RequestPoolReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|uRJ0cm0cS9ccmCrYn5Gil9oOGauzpdwf3jws1GLf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "number_of_people",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-08-04",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "morning",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/RequestPoolReservation",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"RequestPoolReservation"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelMyPoolReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|hUCbP7EzvycdJvzYF9c8gY7chdgJBrAJvkzQ4pCG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cancelMyPoolReservation/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cancelMyPoolReservation",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkPoolAvailability",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|hUCbP7EzvycdJvzYF9c8gY7chdgJBrAJvkzQ4pCG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/checkPoolAvailability?date=2025-06-22&time=morning",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checkPoolAvailability"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-06-22"
+								},
+								{
+									"key": "time",
+									"value": "morning"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMyPoolReservationsByStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|IhB0OGSnR3weEknZtnUHofzubtoFcfZ15LMS24V2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getMyPoolReservationsByStatus?status=confirmed",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMyPoolReservationsByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "confirmed"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payForPool",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|KVrmq3dRGrnRbrZ3AHIBjwLumi6V0DDIRAHitedR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/pool-booking/pay/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"pool-booking",
+								"pay",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOccasionTypes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|DlQjAZDIRdRR7NuiEzYxr2dkK7yFcHnHeHnkhP7Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getOccasionTypes",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getOccasionTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BookHallByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|shqOwR6nPxwLe3FHv8bNWEkQVm0o8E1vLJxix1Ar",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"start_time\": \"2025-07-03 19:30:00\",\r\n  \"end_time\": \"2025-07-03 22:30:00\",\r\n  \"guests_count\": 100,\r\n  \"occasion_type\": \"Wedding\",\r\n  \"decoration_id\": 4,\r\n  \"hospitality_id\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/BookHallByUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"BookHallByUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateHallBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|DlQjAZDIRdRR7NuiEzYxr2dkK7yFcHnHeHnkhP7Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"start_time\": \"2025-07-18 19:30:00\",\r\n  \"end_time\": \"2025-07-18 23:30:00\",\r\n  \"guests_count\": 100,\r\n  \"occasion_type\": \"Wedding\",\r\n  \"decoration_id\": 4,\r\n  \"hospitality_id\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/updateHallBooking/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"updateHallBooking",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHospitalitiesByOccasion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|YTZnqWaIOngaVAh2JVNpzOT5eI0zWnml6Q1w7G0W",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getHospitalitiesByOccasionByUser/Wedding",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getHospitalitiesByOccasionByUser",
+								"Wedding"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDecorationsByOccasion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|hr6ILNlSDYAcOl2viYRhWWCFqFxAQ9bn5kyM7GTF",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getDecorationsByOccasionByUser/Wedding",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getDecorationsByOccasionByUser",
+								"Wedding"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelHallBookingByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|Qm7W2ziSiwTo4NFNLv7kmAxXhSldfTMTNr6akpO2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/cancelHallBookingByUser/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cancelHallBookingByUser",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payForHallBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|shqOwR6nPxwLe3FHv8bNWEkQVm0o8E1vLJxix1Ar",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/hall-booking/pay/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"hall-booking",
+								"pay",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addComplaintByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|AYE2qOvjrhLkyioLGb3L7pZTh0Dwt2dPsHcmB0NK",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"description\": \"خدمة الغرف متأخرة بعض الاحيان\",\r\n  \"department\": \"rooms\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addComplaintByUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addComplaintByUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addRatingByUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|L5nTF6R5S3Cbgx342leoqSviS0Mjc9DkkUJmczLw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"rating\": 4.5,\r\n  \"comment\": \"التطبيق ممتاز وسهل الاستخدام.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/addRatingByUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addRatingByUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receptionist",
+			"item": [
+				{
+					"name": "loog",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login?email=reception2@example.com&password=password123",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "reception2@example.com"
+								},
+								{
+									"key": "password",
+									"value": "password123"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoomTypes Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "15|aKJ6zDEpFHKegLY4zSZsccwFwGnwAr0fxocINNxJ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getRoomTypes",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRoomTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoomsByType Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|p0JmoHUfS8BX16EXNTiudG3t5ePpCrJcL3pNocpj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/getRoomsByType/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRoomsByType",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ApproveBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RGZGAHxcqGLM4pxQ3jEmHaSjyWhe5sCChOuDsp5Z",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/ApproveBooking/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ApproveBooking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelBookingByReceptionist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|p0JmoHUfS8BX16EXNTiudG3t5ePpCrJcL3pNocpj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/CancelBookingByReceptionist/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"CancelBookingByReceptionist",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "checkAvailability",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "12|TgpTid9n5EF7rTSvs631YDuqHsBZlaMFaNdBqX4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "room_id",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "check_in",
+									"value": "2025-07-04",
+									"type": "text"
+								},
+								{
+									"key": "check_out",
+									"value": "2025-07-08",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/checkAvailability",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checkAvailability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showRoomBookingInvoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|RGZGAHxcqGLM4pxQ3jEmHaSjyWhe5sCChOuDsp5Z",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/showRoomBookingInvoice/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"showRoomBookingInvoice",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "assignRoomToBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|PZqeBzsCdUYKSh7s6y0TQRv3yOzplGD5qRkuKccG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "booking_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "room_number",
+									"value": "201",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/assignRoomToBooking",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"assignRoomToBooking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BookRoomByReceptionist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|7E3RAm7RisfjXii9Ahih76gmQDY2U8QPfsui7YOl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "room_id",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "check_in",
+									"value": "2025-08-01",
+									"type": "text"
+								},
+								{
+									"key": "check_out",
+									"value": "2025-07-19",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "guest_name",
+									"value": "guest1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/BookRoomByReceptionist",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"BookRoomByReceptionist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserBookingsByStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|7E3RAm7RisfjXii9Ahih76gmQDY2U8QPfsui7YOl",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getBookingsByStatus/confirmed",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getBookingsByStatus",
+								"confirmed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReceptionBookingsByStatus Copy",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getBookedRoomsByDate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "14|YeZuOIxce2jmOLd3wgagFMp389ec6yOqNT8rNbb0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/getBookedRoomsByDate?date=2025-07-01",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getBookedRoomsByDate"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "2025-07-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking-checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|FDVZaTfKRyAnHAqEBtp20WwPnVaOTG75jhFMEWnC",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/booking-checkout-qr/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"booking-checkout-qr",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BookMassageByReception",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|XuH49xvJDBXM8jPevtenDT7SNLA29nPxVhO2HZmL",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "preferred_time",
+									"value": "2025-07-04 22:00:00",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "female",
+									"type": "text"
+								},
+								{
+									"key": "guest_name",
+									"value": "guest1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/BookMassageByReception",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"BookMassageByReception"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveMassageRequest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|uQo3l8VMdF5ByXIdRcte085AQJWTgiGrlymYsfiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/approveMassageRequest/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"approveMassageRequest",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelMassReqByReception",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|RwOTFql2ohFzsHvR9GN0UaJKaW2vDgk4lb4huWiR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cancelMassReqByReception/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cancelMassReqByReception",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMassReqByStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|RwOTFql2ohFzsHvR9GN0UaJKaW2vDgk4lb4huWiR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getMassReqByStatus?status=confirmed",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMassReqByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "confirmed"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ApprovePoolReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|4TS1VCz2wQRjrcRAjVZdVCMbiyWLBFReEBLe1Q2L",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/ApprovePoolReservation/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ApprovePoolReservation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelPoolReservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|hUCbP7EzvycdJvzYF9c8gY7chdgJBrAJvkzQ4pCG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/cancelPoolReservation/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cancelPoolReservation",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPoolReservationsByStatus",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|53rHbM2UyFyqduciMAwB5MrBNrH3Q3pS8tKigkQy",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/getPoolReservationsByStatus?status=cancelled",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getPoolReservationsByStatus"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "cancelled"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReservePoolByReception",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|HJE8uOs5jzUb0GtQLqF0g941UJNgF7fXtyUPbwSb",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "guest_name",
+									"value": "guest2",
+									"type": "text"
+								},
+								{
+									"key": "number_of_people",
+									"value": "4",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2025-07-04",
+									"type": "text"
+								},
+								{
+									"key": "time",
+									"value": "evening",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/ReservePoolByReception",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"ReservePoolByReception"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckPoolAvailability",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "rejectHallBookingByReceptionist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|g0t900cN72hLu89CfCOCniWM67Rr91RDbPVvFevp",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/rejectHallBookingByReceptionist/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rejectHallBookingByReceptionist",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "acceptHallBookingByReceptionist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|HBmeePeqZVyOS6U3rG7NJvljSioBjKGYgXsu5yWX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/acceptHallBookingByReceptionist/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"acceptHallBookingByReceptionist",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getHallBookingsByStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|FCvgS8MnnT7SzaojtTC6FsY1a6J5Nr5mwC2sqkGR",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/getHallBookingsByStatus/confirmed",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getHallBookingsByStatus",
+								"confirmed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BookHallByReceptionistForUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|CRJO7oEr5xekn5AVkTBVzLM7EwVvHQ2PzLO46UfY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"guestName\" : \"jon\" ,\r\n  \"start_time\": \"2025-06-12 12:00:00\",\r\n  \"end_time\": \"2025-06-12 15:00:00\",\r\n  \"guests_count\": 85,\r\n  \"occasion_type\": \"Birthday\",\r\n  \"decoration_id\": 2,\r\n  \"hospitality_id\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/BookHallByReceptionistForUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"BookHallByReceptionistForUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "previewHallBookingForReceptionist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|K1jHz7hW0Jsd3pcTb3vXRh6FskKaLO1s8OZNQedF",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"guestName\" : \"jon\" ,\r\n  \"start_time\": \"2025-08-13 19:00:00\",\r\n  \"end_time\": \"2025-08-13 21:00:00\",\r\n  \"guests_count\":130,\r\n  \"occasion_type\": \"Birthday\",\r\n  \"decoration_id\": 2,\r\n  \"hospitality_id\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/previewHallBookingForReceptionist",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"previewHallBookingForReceptionist"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "manager@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|KggID6l8PzI6YDYoi3UcHgCKr6PkdTcJoGzBQl2B",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getAllOrders",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getAllOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveOrderBYSupervisor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|fE80s6VT6XEnsOgn380CJe9AiaGtJkh00bgkIuBX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/approveOrderBYSupervisor/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"approveOrderBYSupervisor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rejectedReq",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|fE80s6VT6XEnsOgn380CJe9AiaGtJkh00bgkIuBX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/rejectOrderBYSupervisor/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rejectOrderBYSupervisor",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showOrderByStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|fE80s6VT6XEnsOgn380CJe9AiaGtJkh00bgkIuBX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/restaurant-orders/status/cancelled",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"restaurant-orders",
+								"status",
+								"cancelled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "showInvoiceByStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|fE80s6VT6XEnsOgn380CJe9AiaGtJkh00bgkIuBX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/restaurant-invoice/status/unpaid",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"restaurant-invoice",
+								"status",
+								"unpaid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllInvoices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|fE80s6VT6XEnsOgn380CJe9AiaGtJkh00bgkIuBX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getAllInvoices",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getAllInvoices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMenuItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|zqQaADAQ0w1psoEt6CuRbcgUFHuFS9xiNglgn8rv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ar_name",
+									"value": "كباب مشوي",
+									"type": "default"
+								},
+								{
+									"key": "en_name",
+									"value": "Grilled Kebab",
+									"type": "default"
+								},
+								{
+									"key": "ar_description",
+									"value": "لحم مشوي على الفحم مع الخبز والسلطة",
+									"type": "default"
+								},
+								{
+									"key": "en_description",
+									"value": "Grilled meat served with bread and salad",
+									"type": "default"
+								},
+								{
+									"key": "price",
+									"value": "45.0",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/AddMenuItem",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"AddMenuItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMenuItem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|zqQaADAQ0w1psoEt6CuRbcgUFHuFS9xiNglgn8rv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/DeleteMenuItem/6",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"DeleteMenuItem",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invoicesByDateRange",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|imqs83bBQAeY42liykDFb6ged1vdKDqXOu7UrNdx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"start_date\": \"2025-05-09\",\r\n  \"end_date\": \"2025-05-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/invoicesByDateRange",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"invoicesByDateRange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOrdersByDateRange",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|KggID6l8PzI6YDYoi3UcHgCKr6PkdTcJoGzBQl2B",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"start_date\": \"2025-05-01\",\r\n  \"end_date\": \"2025-05-09\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/getOrdersByDateRange",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getOrdersByDateRange"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getListMenuItems",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|WWdgvzAZcBZvsvSutlobN7EWUowMoYWeSN60dRgH",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getListMenuItemsByUser",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getListMenuItemsByUser"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "areader@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "reader55555",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://hotelmanagementsys.online/api/login",
+							"protocol": "http",
+							"host": [
+								"hotelmanagementsys",
+								"online"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddRoom",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|3KBRaCEsYkh0C5GNuGMTheJxOBNvTjzL86gV6QBj",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "number",
+									"value": "104",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "available",
+									"type": "text"
+								},
+								{
+									"key": "room_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/AddRoom",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"AddRoom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddRoomImage",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/MSI USER/Downloads/stock-photo-full-spherical-seamless-hdr-panorama-degrees-view-in-interior-of-modern-flat-apartment-bedroom-2297506855.jpg"
+								},
+								{
+									"key": "image_type",
+									"value": "panorama",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/AddRoomImage/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"AddRoomImage",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRoom",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|2RkJzTFzOosKNv8u5ZT8iphCiThkSHk0TEJbU29W",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "number",
+									"value": "101",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "available",
+									"type": "text"
+								},
+								{
+									"key": "room_type_id",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/updateRoom/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"updateRoom",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|2RkJzTFzOosKNv8u5ZT8iphCiThkSHk0TEJbU29W",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "pool1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pool1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "43222118765",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "2000-04-01",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "General",
+									"type": "text"
+								},
+								{
+									"key": "job_title",
+									"value": "pool worker",
+									"type": "text"
+								},
+								{
+									"key": "employment_history",
+									"value": "2024-08-11",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "2000000",
+									"type": "text"
+								},
+								{
+									"key": "housing",
+									"value": "Damascus",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123fdgfvgf",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123fdgfvgf",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/addEmployee",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addEmployee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|2RkJzTFzOosKNv8u5ZT8iphCiThkSHk0TEJbU29W",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "pool2",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "pool2@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "43222118765",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "male",
+									"type": "text"
+								},
+								{
+									"key": "birthday",
+									"value": "2000-04-01",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "General",
+									"type": "text"
+								},
+								{
+									"key": "job_title",
+									"value": "pool worker",
+									"type": "text"
+								},
+								{
+									"key": "employment_history",
+									"value": "2024-08-11",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "2000000",
+									"type": "text"
+								},
+								{
+									"key": "housing",
+									"value": "Damascus",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/updateEmployee/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"updateEmployee",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteEmployee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|2RkJzTFzOosKNv8u5ZT8iphCiThkSHk0TEJbU29W",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/deleteEmployee/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"deleteEmployee",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getEmployees",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|A91n8VwgE1KB4aiBfduZEg1CW9vQNajkJcBao6bL",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getEmployees?role=General&search=ma",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getEmployees"
+							],
+							"query": [
+								{
+									"key": "role",
+									"value": "General"
+								},
+								{
+									"key": "search",
+									"value": "ma"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRooms",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|nH3SlTJ2cO6DGoFVOrV7vDsTN92BqkAV6ph22C7U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/getRooms",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCurrentGuests",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "13|77QkrnoPqTAze3FxXPwAx8Krp9q9UeWvQYEO5GGT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/api/getCurrentGuests",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getCurrentGuests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGuestsArchive",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "13|77QkrnoPqTAze3FxXPwAx8Krp9q9UeWvQYEO5GGT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getGuestBookingArchive",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getGuestBookingArchive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOverviewStats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|aFx5uqutpDRUCf0Kmk2H1KIvG4QksbzlE5heOZvf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getOverviewStats",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getOverviewStats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRevenueStats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|aFx5uqutpDRUCf0Kmk2H1KIvG4QksbzlE5heOZvf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getRevenueStats",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRevenueStats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getOccupancyStatistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "8|Enul5Isg52KJrlAqNixav1KMBzGl7KsBCAwEz1lz",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getOccupancyStatistics",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getOccupancyStatistics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRestaurantWeeklyStats",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|aFx5uqutpDRUCf0Kmk2H1KIvG4QksbzlE5heOZvf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getRestaurantWeeklyStats",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRestaurantWeeklyStats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddServicePrice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|b489k5GIsvVMOf3OXCl9gcvoiWKBbYnmpVioUlsa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_type",
+									"value": "restaurant",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "10",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/AddServicePrice",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"AddServicePrice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activateOldServicePrice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|b489k5GIsvVMOf3OXCl9gcvoiWKBbYnmpVioUlsa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/activateOldServicePrice/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activateOldServicePrice",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getServicePriceByType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|UnaT5sV6elqvtbM9NunsG9OL5H65t0azgAD2vFTq",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getServicePriceByType/massage",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getServicePriceByType",
+								"massage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteServicePrice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|b489k5GIsvVMOf3OXCl9gcvoiWKBbYnmpVioUlsa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/deleteServicePrice/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"deleteServicePrice",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addPromotion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|b489k5GIsvVMOf3OXCl9gcvoiWKBbYnmpVioUlsa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "خصم 5$ على حجز الغرفة",
+									"type": "text"
+								},
+								{
+									"key": "discount_type",
+									"value": "percentage",
+									"type": "text"
+								},
+								{
+									"key": "promotion_type",
+									"value": "BookRoom",
+									"type": "text"
+								},
+								{
+									"key": "discount_value",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "start_date",
+									"value": "2025-06-27",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "2025-06-30",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/api/addPromotion",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"addPromotion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activateOldPromotion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|b489k5GIsvVMOf3OXCl9gcvoiWKBbYnmpVioUlsa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/activateOldPromotion/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activateOldPromotion",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPromotionsByType",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|b489k5GIsvVMOf3OXCl9gcvoiWKBbYnmpVioUlsa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getPromotionsByType/BookRoom",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getPromotionsByType",
+								"BookRoom"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePromotion",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|b489k5GIsvVMOf3OXCl9gcvoiWKBbYnmpVioUlsa",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/deletePromotion/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"deletePromotion",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMonthlyRevenueReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|MNMhm5A5S4V1SSy4NnumM9hJt3SfRlxgTf2FzgAG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getMonthlyRevenueReport",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getMonthlyRevenueReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getInvoiceReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|MNMhm5A5S4V1SSy4NnumM9hJt3SfRlxgTf2FzgAG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getInvoiceReport",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getInvoiceReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getRoomOccupancyReport",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "13|77QkrnoPqTAze3FxXPwAx8Krp9q9UeWvQYEO5GGT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "localhost:8000/api/getRoomOccupancyReport",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getRoomOccupancyReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getActivityReport",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "13|77QkrnoPqTAze3FxXPwAx8Krp9q9UeWvQYEO5GGT",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getActivityReport",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getActivityReport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserInvoices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|MNMhm5A5S4V1SSy4NnumM9hJt3SfRlxgTf2FzgAG",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getUserInvoices/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getUserInvoices",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllComplaints",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|QXFtzrtUsPLVqhBvpm8CQPgWxgjwrnFAtGlfA3uZ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/getAllComplaints",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getAllComplaints"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getGuestsWithInvoices",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|aFx5uqutpDRUCf0Kmk2H1KIvG4QksbzlE5heOZvf",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/api/getGuestsWithInvoices",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"getGuestsWithInvoices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "room-checkout/verify",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "verify-otp Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/auth/verify-otp",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"verify-otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resend-otp Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/auth/resend-otp",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"auth",
+						"resend-otp"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
